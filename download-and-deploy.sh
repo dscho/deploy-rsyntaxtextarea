@@ -10,6 +10,9 @@ die "Usage: $0 <version>"
 
 version="$1"
 
+sed "s/RSYNTAXTEXTAREA_VERSION/$version/" < pom.xml.in > pom.xml ||
+die "Could not generate pom.xml"
+
 base=http://sourceforge.net/projects/rsyntaxtextarea/files/rsyntaxtextarea/
 jar=$base/"$version"/rsyntaxtextarea_"$version".zip/download
 source=$base/"$version"/rsyntaxtextarea_"$version"_Source.zip/download

@@ -3,23 +3,25 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.fifesoft</groupId>
-		<artifactId>rtext-root-pom</artifactId>
-		<version>3</version>
-		<relativePath>../../pom.xml</relativePath>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+		<relativePath />
 	</parent>
 
 	<groupId>com.fifesoft</groupId>
 	<artifactId>rsyntaxtextarea</artifactId>
-	<version>2.5.0</version>
+	<version>2.5.1</version>
 	<packaging>jar</packaging>
+
 	<name>RSyntaxTextArea</name>
 	<description>
-		RSyntaxTextArea is the syntax highlighting text editor used in RText, pulled out into its 
-		own jar so it is easily usable in any application. Features include Syntax highlighting for 20+ 
+		RSyntaxTextArea is the syntax highlighting text editor used in RText, pulled out into its
+		own jar so it is easily usable in any application. Features include Syntax highlighting for 20+
 		languages, Code completion, Regex find and replace, Macros, Code templates, Unlimited undo/redo
 		Line numbering and bracket matching.
   	</description>
+
 	<inceptionYear>2003</inceptionYear>
 	<url>http://www.fifesoft.com/rsyntaxtextarea/</url>
 	<licenses>
@@ -29,43 +31,50 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
+
 	<scm>
-		<url>http://svn.fifesoft.com/viewvc-1.0.5/bin/cgi/viewvc.cgi/RSyntaxTextArea/?root=RSyntaxTextArea</url>
-		<connection>http://svn.fifesoft.com/svn/RSyntaxTextArea/RSyntaxTextArea/</connection>
+		<url>https://github.com/bobbylight/RSyntaxTextArea</url>
+		<connection>scm:git:git://github.com/bobbylight/RSyntaxTextArea</connection>
+		<developerConnection>scm:git:git@github.com:bobbylight/RSyntaxTextArea</developerConnection>
+		<tag>2.5.1</tag>
 	</scm>
+
 	<developers>
 		<developer>
 			<name>Robert Futrell</name>
 			<url>http://www.fifesoft.com</url>
+                        <organization>Fifesoft</organization>
+                        <organizationUrl>http://www.fifesoft.com/</organizationUrl>
+                        <roles>
+                                <role>architect</role>
+                                <role>developer</role>
+                        </roles>
+                        <timezone>0</timezone>
+
 		</developer>
 	</developers>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>${junit-version}</version>
+			<version>4.8.1</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${compiler-plugin-version}</version>
+				<version>2.3.2</version>
 				<executions>
 					<execution>
 						<id>default-compile</id>
 						<configuration>
-							<fork>true</fork>
-							<executable>${javac15-compiler-executable}</executable>
-							<compilerVersion>1.5</compilerVersion>
 							<source>1.5</source>
 							<target>1.5</target>
 						</configuration>
-						<goals>
-							<goal>compile</goal>
-						</goals>
-
 					</execution>
 				</executions>
 			</plugin>

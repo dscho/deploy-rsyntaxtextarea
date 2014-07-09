@@ -47,8 +47,8 @@ stty echo
 
 args="-Psonatype-oss-release gpg:sign-and-deploy-file -Dgpg.ascDirectory=target"
 args="$args -Dgpg.keyname=$keyname -Dgpg.passphrase=$passphrase"
-args="$args -DrepositoryId=imagej.thirdparty"
-args="$args -Durl=dav:http://maven.imagej.net/content/repositories/thirdparty"
+args="$args -Durl=https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+args="$args -DrepositoryId=sonatype-nexus-staging"
 
 mvn $args -DpomFile=pom.xml -Dfile=target/rsyntaxtextarea-"$version".jar ||
 die "Could not deploy main artifact!"
